@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="16dp">
+    <RadioGroup android:id="@+id/type_radio" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+        <RadioButton android:id="@+id/type_m3u" android:text="M3U" android:checked="true"/>
+        <RadioButton android:id="@+id/type_xtream" android:text="Xtream Codes"/>
+    </RadioGroup>
+    <EditText android:id="@+id/name_input" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Playlist Name" android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true"/>
+    <EditText android:id="@+id/url_input" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="M3U URL" android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true" android:inputType="textUri"/>
+    <EditText android:id="@+id/user_agent_input" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="User-Agent (optional)" android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true"/>
+    <LinearLayout android:id="@+id/xtream_layout" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+        <EditText android:id="@+id/xtream_host" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Server URL" android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true" android:inputType="textUri"/>
+        <EditText android:id="@+id/xtream_user" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Username" android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true"/>
+        <EditText android:id="@+id/xtream_pass" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Password" android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true" android:inputType="textPassword"/>
+    </LinearLayout>
+</LinearLayout>

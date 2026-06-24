@@ -1,0 +1,95 @@
+<?xml
+version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal" android:background="@color/dark_bg">
+    <!-- Always-visible sidebar -->
+    <LinearLayout android:layout_width="200dp" android:layout_height="match_parent"
+        android:orientation="vertical" android:background="#1A1A2E" android:padding="8dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Categories" android:textColor="@color/red_accent" android:textSize="16sp"
+            android:textStyle="bold" android:layout_marginBottom="8dp" android:padding="12dp"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/group_list"
+            android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+        <Button android:id="@+id/btn_back_home" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="← Home" android:textColor="@color/white"
+            android:focusable="true" android:focusableInTouchMode="true"
+            android:background="@drawable/focus_border" android:layout_marginTop="8dp"/>
+    </LinearLayout>
+    <!-- Main content area -->
+    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+        android:orientation="vertical" android:padding="16dp">
+        <!-- Search bar -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+            android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/search_box" android:layout_width="0dp" android:layout_height="48dp"
+                android:layout_weight="1" android:hint="Search channels..."
+                android:textColor="@color/white" android:textColorHint="#888888"
+                android:background="@drawable/focus_border" android:paddingStart="12dp"
+                android:focusable="true" android:focusableInTouchMode="true"
+                android:singleLine="true" android:inputType="text" android:imeOptions="actionSearch"/>
+            <Button android:id="@+id/epg_btn" android:layout_width="wrap_content" android:layout_height="48dp"
+                android:text="EPG" android:textSize="12sp" android:textColor="@color/white"
+                android:focusable="true" android:focusableInTouchMode="true"
+                android:background="@drawable/focus_border" android:layout_marginStart="8dp"
+                android:paddingStart="12dp" android:paddingEnd="12dp"/>
+        </LinearLayout>
+
+        <!-- DASHBOARD VIEW (only visible when "Dashboard" is selected) -->
+        <ScrollView android:id="@+id/dashboard_scroll" android:layout_width="match_parent"
+            android:layout_height="0dp" android:layout_weight="1" android:visibility="gone">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Continue Watching -->
+                <LinearLayout android:id="@+id/continue_watching_section" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:visibility="gone" android:layout_marginBottom="8dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Continue Watching" android:textColor="@color/red_accent"
+                        android:textSize="16sp" android:textStyle="bold" android:padding="8dp"/>
+                    <FrameLayout android:id="@+id/continue_watching_item" android:layout_width="match_parent"
+                        android:layout_height="80dp" android:focusable="true" android:focusableInTouchMode="true"
+                        android:background="@drawable/focus_border">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
+                            <ImageView android:id="@+id/continue_watching_icon" android:layout_width="48dp"
+                                android:layout_height="48dp" android:src="@android:drawable/ic_media_play"/>
+                            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:orientation="vertical" android:paddingStart="12dp">
+                                <TextView android:id="@+id/continue_watching_name" android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:textColor="@color/white"
+                                    android:textSize="16sp" android:textStyle="bold"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:textColor="#AAAAAA" android:textSize="11sp"
+                                    android:text="Press OK to resume"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+                <!-- Recently Watched -->
+                <TextView android:id="@+id/recent_header" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Recently Watched"
+                    android:textColor="@color/red_accent" android:textSize="16sp" android:textStyle="bold"
+                    android:padding="8dp" android:visibility="gone"/>
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/recent_row"
+                    android:layout_width="match_parent" android:layout_height="130dp"
+                    android:layout_marginBottom="4dp"/>
+                <!-- Favorites -->
+                <TextView android:id="@+id/favorites_header" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Favorites"
+                    android:textColor="@color/red_accent" android:textSize="16sp" android:textStyle="bold"
+                    android:padding="8dp" android:visibility="gone"/>
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/favorites_row"
+                    android:layout_width="match_parent" android:layout_height="130dp"
+                    android:layout_marginBottom="4dp"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- CHANNEL LIST VIEW (default, shows when groups are selected) -->
+        <FrameLayout android:id="@+id/channel_list_container" android:layout_width="match_parent"
+            android:layout_height="0dp" android:layout_weight="1" android:visibility="visible">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/channel_list"
+                android:layout_width="match_parent" android:layout_height="match_parent"/>
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+-keep class com.streamnator.app.data.db.** { *; }
+-keep class com.streamnator.app.domain.model.** { *; }
+-keep,allowobfuscation interface * { @retrofit2.http.* <methods>; }
+-keep class androidx.media3.** { *; }
+-dontwarn okhttp3.**
+-dontwarn okio.**

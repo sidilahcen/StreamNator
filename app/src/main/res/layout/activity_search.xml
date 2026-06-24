@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/dark_bg" android:padding="16dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+        <Button android:id="@+id/btn_back" android:layout_width="wrap_content" android:layout_height="48dp"
+            android:text="← Back" android:textSize="14sp" android:textColor="@color/white"
+            android:focusable="true" android:focusableInTouchMode="true"
+            android:background="@drawable/focus_border" android:layout_marginEnd="12dp"
+            android:paddingStart="12dp" android:paddingEnd="12dp"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Search" android:textSize="24sp" android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:layout_marginBottom="12dp">
+        <EditText android:id="@+id/search_input" android:layout_width="match_parent"
+            android:layout_height="48dp" android:hint="Type to search..."
+            android:textColor="@color/white" android:textColorHint="#888888"
+            android:background="@drawable/focus_border" android:padding="12dp"
+            android:focusable="true" android:focusableInTouchMode="true"
+            android:inputType="text"/>
+    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/search_results"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+</LinearLayout>

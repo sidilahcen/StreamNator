@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/dark_bg" android:padding="24dp" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="24dp">
+            <Button android:id="@+id/btn_back" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Back" android:focusable="true" android:focusableInTouchMode="true"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="Settings" android:textSize="28sp" android:textColor="@color/white" android:gravity="center"/>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="General" android:textSize="20sp" android:textColor="@color/red_accent" android:layout_marginBottom="12dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:padding="8dp" android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="Dark Theme" android:textSize="16sp" android:textColor="@color/white"/>
+            <Switch android:id="@+id/theme_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:focusable="true" android:focusableInTouchMode="true"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:padding="8dp" android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="Auto-refresh on startup" android:textSize="16sp" android:textColor="@color/white"/>
+            <Switch android:id="@+id/auto_refresh_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:focusable="true" android:focusableInTouchMode="true"/>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Playback" android:textSize="20sp" android:textColor="@color/red_accent"
+            android:layout_marginTop="16dp" android:layout_marginBottom="12dp"/>
+        <TextView android:text="Default Player" android:textColor="@color/white" android:textSize="14sp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Spinner android:id="@+id/player_spinner" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true"/>
+        <TextView android:text="Quality" android:textColor="@color/white" android:textSize="14sp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Spinner android:id="@+id/quality_spinner" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true"/>
+        <TextView android:text="Buffer" android:textColor="@color/white" android:textSize="14sp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Spinner android:id="@+id/buffer_spinner" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true"/>
+        <TextView android:text="Skip Interval" android:textColor="@color/white" android:textSize="14sp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Spinner android:id="@+id/skip_spinner" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" android:focusable="true" android:focusableInTouchMode="true"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="EPG" android:textSize="20sp" android:textColor="@color/red_accent"
+            android:layout_marginTop="16dp" android:layout_marginBottom="12dp"/>
+        <TextView android:text="Match Method" android:textColor="@color/white" android:textSize="14sp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <Spinner android:id="@+id/epg_match_spinner" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" android:focusable="true" android:focusableInTouchMode="true"/>
+    </LinearLayout>
+</ScrollView>

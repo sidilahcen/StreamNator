@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.StreamNator" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/red_accent</item>
+        <item name="colorPrimaryDark">@color/dark_bg</item>
+        <item name="colorAccent">@color/red_accent</item>
+        <item name="android:windowBackground">@color/dark_bg</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Theme.StreamNator.Player" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>

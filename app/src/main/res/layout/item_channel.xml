@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_wrapper"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:focusable="false">
+    <!-- Channel info row (focusable, clickable) -->
+    <LinearLayout android:id="@+id/channel_info"
+        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+        android:orientation="vertical" android:padding="8dp"
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:background="@drawable/focus_border" android:clickable="true"
+        android:nextFocusRight="@id/btn_fav">
+        <TextView android:id="@+id/channel_name" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/channel_group" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="#AAAAAA" android:layout_marginTop="2dp"/>
+    </LinearLayout>
+    <!-- Favorite button (separate focusable sibling) -->
+    <Button android:id="@+id/btn_fav" android:layout_width="48dp" android:layout_height="48dp"
+        android:text="☆" android:textSize="24sp" android:textColor="#FFFFFF"
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:background="@drawable/focus_border" android:layout_marginStart="4dp"
+        android:nextFocusLeft="@id/channel_info"/>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000000">
+    <!-- Use texture_view so controls can render on top -->
+    <androidx.media3.ui.PlayerView android:id="@+id/player_view"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        app:use_controller="false"
+        app:surface_type="texture_view"
+        android:focusable="false" android:clickable="false" />
+
+    <!-- Controls bar at the bottom -->
+    <LinearLayout android:id="@+id/player_controls" android:layout_width="match_parent"
+        android:layout_height="56dp" android:layout_gravity="bottom"
+        android:background="#CC000000" android:gravity="center_vertical"
+        android:orientation="horizontal" android:padding="8dp">
+        <TextView android:id="@+id/player_channel_title" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold"
+            android:focusable="false"/>
+        <Button android:id="@+id/btn_fav" android:layout_width="48dp" android:layout_height="48dp"
+            android:text="☆" android:textSize="28sp" android:textColor="#FFFFFF"
+            android:focusable="true" android:focusableInTouchMode="true" android:clickable="true"
+            android:background="@drawable/player_focus_border" android:layout_marginEnd="8dp"/>
+        <Button android:id="@+id/btn_play_pause" android:layout_width="wrap_content"
+            android:layout_height="48dp" android:text="PLAY/PAUSE" android:textSize="12sp"
+            android:textColor="#FFFFFF" android:focusable="true" android:focusableInTouchMode="true"
+            android:clickable="true" android:background="@drawable/player_focus_border"
+            android:paddingStart="12dp" android:paddingEnd="12dp"/>
+        <Button android:id="@+id/btn_stop" android:layout_width="wrap_content"
+            android:layout_height="48dp" android:text="STOP" android:textSize="12sp"
+            android:textColor="#FFFFFF" android:focusable="true" android:focusableInTouchMode="true"
+            android:clickable="true" android:background="@drawable/player_focus_border"
+            android:layout_marginStart="8dp" android:paddingStart="12dp" android:paddingEnd="12dp"/>
+    </LinearLayout>
+</FrameLayout>
