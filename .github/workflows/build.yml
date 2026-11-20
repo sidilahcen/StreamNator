@@ -18,17 +18,13 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Build Debug APK
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace
+          ./gradlew :application:assembleDebug --stacktrace
 
       - name: Upload Debug APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: StreamNator-debug-apk
           path: application/build/outputs/apk/debug/*.apk
-          
